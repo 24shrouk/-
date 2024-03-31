@@ -26,6 +26,8 @@ class _SplachScreenState extends State<SplachScreen> {
     return const Scaffold(
       body: Center(
         child: CircleAvatar(
+          radius: 122,
+          backgroundColor: Color.fromARGB(255, 243, 233, 221),
           child: Text(
             'الاربعون نووية',
             style: TextStyle(
@@ -35,22 +37,8 @@ class _SplachScreenState extends State<SplachScreen> {
                 fontFamily: 'Pacifico',
                 color: Colors.brown),
           ),
-          radius: 122,
-          backgroundColor: const Color.fromARGB(255, 243, 233, 221),
         ),
-      )
-      /*Container(
-        decoration:BoxDecoration(,color: Colors.white),
-        child: const Text(
-          'الاربعون نووية',
-          style: TextStyle(
-              fontSize: 35,
-              fontWeight: FontWeight.bold,
-              fontStyle: FontStyle.italic,
-              color: Colors.brown),
-        ),
-      ),*/
-      ,
+      ),
       backgroundColor: Colors.brown,
     );
   }

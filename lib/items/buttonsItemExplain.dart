@@ -29,14 +29,14 @@ class ButtonsItemExplain extends StatelessWidget {
                   ),
                 )),
           ),
-          SizedBox(
+          const SizedBox(
             width: 8,
           ),
           Expanded(
             child: ElevatedButton(
                 style: ButtonStyle(
                   backgroundColor: MaterialStateProperty.all<Color>(
-                    Color.fromARGB(255, 243, 233, 221),
+                    const Color.fromARGB(255, 243, 233, 221),
                   ),
                 ),
                 onPressed: () {},

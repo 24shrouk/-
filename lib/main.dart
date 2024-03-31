@@ -1,10 +1,13 @@
-import 'package:animated_splash_screen/animated_splash_screen.dart';
 import 'package:flutter/material.dart';
-import 'package:new_app/screens/home.dart';
 import 'package:new_app/screens/splach.dart';
+import 'package:new_app/theme/saved_provider.dart';
+import 'package:provider/provider.dart';
 
 void main() {
-  runApp(const Hadiths());
+  runApp(ChangeNotifierProvider(
+    create: (context) => SavedProvider(),
+    child: const Hadiths(),
+  ));
 }
 
 class Hadiths extends StatelessWidget {
@@ -12,9 +15,9 @@ class Hadiths extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: SplachScreen(),
+      home: const SplachScreen(),
     );
   }
 }
