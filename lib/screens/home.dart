@@ -76,21 +76,24 @@ class _HomePageState extends State<HomePage> {
                           label: 'Delete',
                         )
                       ]),
-                      child: ListTile(
-                        tileColor: const Color.fromARGB(255, 243, 233, 221),
-                        title: Text(
-                          finalList[index].text1,
-                          style: const TextStyle(
-                            fontSize: 24,
-                            fontWeight: FontWeight.bold,
+                      child: GestureDetector(
+                        onTap: finalList[index].onTap,
+                        child: ListTile(
+                          tileColor: const Color.fromARGB(255, 243, 233, 221),
+                          title: Text(
+                            finalList[index].text1,
+                            style: const TextStyle(
+                              fontSize: 24,
+                              fontWeight: FontWeight.bold,
+                            ),
                           ),
-                        ),
-                        subtitle: Text(
-                          finalList[index].text2,
-                          style: const TextStyle(
-                            fontSize: 20,
+                          subtitle: Text(
+                            finalList[index].text2,
+                            style: const TextStyle(
+                              fontSize: 20,
+                            ),
+                            overflow: TextOverflow.ellipsis,
                           ),
-                          overflow: TextOverflow.ellipsis,
                         ),
                       ),
                     ),
