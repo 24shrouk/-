@@ -48,6 +48,7 @@ class _CustomSliderState extends State<CustomSlider> {
     player.onPlayerComplete.listen((_) {
       setState(() {
         _position = _duration;
+        isPlaying = false;
       });
     });
   }
@@ -72,9 +73,12 @@ class _CustomSliderState extends State<CustomSlider> {
 
   @override
   Widget build(BuildContext context) {
-    final formattedDuration = formatDuration(_duration);
+    // final formattedDuration = formatDuration(_duration);
+    final formattedPosition = formatDuration(_position);
+
     return Padding(
-      padding: const EdgeInsets.only(left: 16.0, right: 16, top: 8, bottom: 16),
+      padding:
+          const EdgeInsets.only(left: 16.0, right: 16, top: 16, bottom: 24),
       child: Container(
         height: 50,
         width: 90,
@@ -95,6 +99,7 @@ class _CustomSliderState extends State<CustomSlider> {
               Icons.volume_up,
               color: Colors.black,
             ),
+            // Text(formattedDuration),
             Transform.rotate(
               angle: 180 *
                   3.14159 /
@@ -109,9 +114,10 @@ class _CustomSliderState extends State<CustomSlider> {
                   onChanged: (double value) async {
                     await player.seek(Duration(seconds: value.toInt()));
                     setState(() {});
+                    _position = Duration(seconds: value.toInt());
                   }),
             ),
-            Text(formattedDuration),
+            Text(formattedPosition),
             GestureDetector(
               onTap: playPause,
               child: Icon(

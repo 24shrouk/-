@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_slidable/flutter_slidable.dart';
 import 'package:new_app/constants.dart';
 import 'package:new_app/explain_pages/page_one.dart';
-import 'package:new_app/items/aduio_player.dart';
 import 'package:new_app/items/slider.dart';
 
 class One extends StatelessWidget {
@@ -28,7 +26,8 @@ class One extends StatelessWidget {
           body: ListView(
             children: [
               Padding(
-                padding: const EdgeInsets.all(8.0),
+                padding: const EdgeInsets.only(
+                    top: 24, left: 16, bottom: 16, right: 16),
                 child: Row(
                   mainAxisSize: MainAxisSize.max,
                   mainAxisAlignment: MainAxisAlignment.end,
@@ -49,14 +48,14 @@ class One extends StatelessWidget {
                             ),
                           )),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       width: 8,
                     ),
                     Expanded(
                       child: ElevatedButton(
                           style: ButtonStyle(
                             backgroundColor: MaterialStateProperty.all<Color>(
-                              Color.fromARGB(255, 243, 233, 221),
+                              const Color.fromARGB(255, 243, 233, 221),
                             ),
                           ),
                           onPressed: () {
@@ -79,7 +78,7 @@ class One extends StatelessWidget {
                   ],
                 ),
               ),
-              CustomSlider(aduio: 'nawawi01.mp3'),
+              const CustomSlider(aduio: 'nawawi01.mp3'),
               Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: Container(
